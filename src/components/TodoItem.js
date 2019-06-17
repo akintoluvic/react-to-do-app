@@ -20,7 +20,9 @@ class TodoItem extends Component {
           <h3>
               <input type="checkbox" onChange={this.props.markComplete.bind(this, id)} /> {' '}
           { title }
-          <button style={btnStyle}>x</button>
+          <button 
+          onClick={this.props.deleteTodo.bind(this, id)} 
+          style={btnStyle}>x</button>
           </h3>  
         </div> 
         );
