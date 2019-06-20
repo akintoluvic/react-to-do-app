@@ -48,6 +48,14 @@ class App extends Component {
     });
   }
 
+  // Delete Todo
+  editTodo = (id) => {
+    console.log('Now edit')
+    // this.setState({
+    //   todos: [...this.state.todos.filter(todo => todo.id !== id)]
+    // });
+  }
+
   // Add Todo
   addTodo = (title) => {
     const newTodo = {
@@ -70,6 +78,7 @@ class App extends Component {
                   <Todos 
                   todos={this.state.todos} 
                   markComplete={this.markComplete} 
+                  editTodo={this.editTodo}
                   deleteTodo={this.deleteTodo} 
                   />
                 </React.Fragment>
