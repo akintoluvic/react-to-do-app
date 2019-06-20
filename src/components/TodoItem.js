@@ -41,6 +41,7 @@ const btnStyle = {
     background: '#ff0000',
     color: '#fff',
     border: 'none',
+    marginRight: '5px',
     padding: '5px 10px 7px',
     borderRadius: '50%',
     cursor: 'pointer',
