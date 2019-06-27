@@ -52,9 +52,9 @@ class App extends Component {
   editTodo = (id) => {
     console.log('Now edit')
     
-    // this.setState({
-    //   todos: [...this.state.todos.filter(todo => todo.id !== id)]
-    // });
+    this.setState({
+      todos: [...this.state.todos.filter(todo => todo.id !== id)]
+    });
   }
 
   // Add Todo
