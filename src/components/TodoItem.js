@@ -20,12 +20,14 @@ class TodoItem extends Component {
           <h3>
               <input type="checkbox" onChange={this.props.markComplete.bind(this, id)} /> {' '}
           { title }
-          <button 
+
+          <img src={"../edit.png"} alt="edit" 
           onClick={this.props.editTodo.bind(this, id)} 
-          style={btnStyle}>e</button>
-          <button 
+          style={btnStyle} />
+
+          <img src={"../trash.png"} alt="delete" 
           onClick={this.props.deleteTodo.bind(this, id)} 
-          style={btnStyle}>x</button>
+          style={btnStyle} />
           </h3>  
         </div> 
         );
@@ -38,12 +40,9 @@ TodoItem.propTypes = {
 }
 
 const btnStyle = {
-    background: '#ff0000',
-    color: '#fff',
-    border: 'none',
+    height: '15px',
+    width: '15px',
     marginRight: '5px',
-    padding: '5px 10px 7px',
-    borderRadius: '50%',
     cursor: 'pointer',
     float: 'right'
 }
