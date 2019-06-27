@@ -40,9 +40,10 @@ TodoItem.propTypes = {
 }
 
 const btnStyle = {
-    height: '15px',
-    width: '15px',
+    height: '16px',
+    width: '16px',
     marginRight: '5px',
+    marginTop: '3px',
     cursor: 'pointer',
     float: 'right'
 }
