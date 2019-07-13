@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
+
 
 class AddTodo extends Component {
-    state = { 
-        title: ''
-     }
+    // // state = { 
+    // //     title: ''
+    // //  }
 
-     onChange = (e) => this.setState({ [e.target.name]: e.target.value })
+    // //  onChange = (e) => this.setState({ [e.target.name]: e.target.value })
      
-     onSubmit = (e) => {
-        e.preventDefault();
-        this.props.addTodo(this.state.title);
-        this.setState({ title: '' })
-     }
+    // //  onSubmit = (e) => {
+    // //     e.preventDefault();
+    // //     this.props.addTodo(this.state.title);
+    // //     this.setState({ title: '' })
+    //  }
 
     render() {
         return (
-            <form onSubmit={this.onSubmit} style={{display: 'flex'}} >
+            <form onSubmit={this.props.onSubmit} style={{display: 'flex'}} >
                 <input 
                 type="text" 
                 name="title" 
                 style={{flex: '10'}} 
                 placeholder="Add To Do ..." 
-                value={this.state.title} 
-                onChange={this.onChange}
+                value={this.props.title} 
+                onChange={this.props.onChange}
                 />
                 <input 
                 type="submit" 
@@ -35,5 +37,10 @@ class AddTodo extends Component {
         
     }
 }
+
+// // PropTypes
+// AddTodo.propTypes = {
+//     todo: PropTypes.object.isRequired
+// }
  
 export default AddTodo;

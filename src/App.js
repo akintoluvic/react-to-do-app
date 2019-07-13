@@ -10,6 +10,7 @@ import './App.css';
 
 class App extends Component {
   state = {
+    title: '', 
     todos: [
       {
         id: uuid.v4(),
@@ -67,6 +68,14 @@ class App extends Component {
     this.setState({ todos: [...this.state.todos, newTodo] });
   }
 
+  onChange = (e) => this.setState({ [e.target.name]: e.target.value })
+     
+     onSubmit = (e) => {
+        e.preventDefault();
+        this.addTodo(this.state.title);
+        this.setState({ title: '' });
+     }
+
   render() {
       return (
         <Router>
@@ -75,7 +84,11 @@ class App extends Component {
               <Header />
               <Route exact path="/" render = {props => (
                 <React.Fragment>
-                  <AddTodo addTodo={this.addTodo} />
+                  <AddTodo 
+                  addTodo={this.addTodo} 
+                  onChange={this.onChange} 
+                  onSubmit={this.onSubmit} 
+                  />
                   <Todos 
                   todos={this.state.todos} 
                   markComplete={this.markComplete} 
