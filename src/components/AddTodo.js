@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 
 class AddTodo extends Component {
   
 
     render() {
+        const { onChange, onSubmit, title } = this.props;
         return (
-            <form onSubmit={this.props.onSubmit} style={{display: 'flex'}} >
+            <form onSubmit={onSubmit} style={{display: 'flex'}} >
                 <input 
                 type="text" 
                 name="title" 
                 style={{flex: '10'}} 
                 placeholder="Add To Do ..." 
-                value={this.props.title} 
-                onChange={this.props.onChange}
+                value={title} 
+                onChange={onChange}
                 />
                 <input 
                 type="submit" 
@@ -28,9 +29,9 @@ class AddTodo extends Component {
     }
 }
 
-// PropTypes
-AddTodo.propTypes = {
-    title: PropTypes.string.isRequired
-}
+// // PropTypes
+// AddTodo.propTypes = {
+//     title: PropTypes.string.isRequired
+// }
  
 export default AddTodo;

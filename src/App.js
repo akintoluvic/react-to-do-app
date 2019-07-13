@@ -51,8 +51,7 @@ class App extends Component {
 
   // Delete Todo
   editTodo = (id) => {
-    console.log('Now edit')
-    document.
+    console.log('Now edit');
     
     this.deleteTodo(id);
   }
@@ -72,7 +71,7 @@ class App extends Component {
      onSubmit = (e) => {
         e.preventDefault();
         this.addTodo(this.state.title);
-        // this.setState({ title: '' });
+        this.setState({ title: '' });
      }
 
   render() {
