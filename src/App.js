@@ -52,10 +52,9 @@ class App extends Component {
   // Delete Todo
   editTodo = (id) => {
     console.log('Now edit')
+    document.
     
-    this.setState({
-      todos: [...this.state.todos.filter(todo => todo.id !== id)]
-    });
+    this.deleteTodo(id);
   }
 
   // Add Todo
@@ -68,12 +67,12 @@ class App extends Component {
     this.setState({ todos: [...this.state.todos, newTodo] });
   }
 
-  onChange = (e) => this.setState({ [e.target.name]: e.target.value })
+  onChange = (e) => this.setState({ title: e.target.value })
      
      onSubmit = (e) => {
         e.preventDefault();
         this.addTodo(this.state.title);
-        this.setState({ title: '' });
+        // this.setState({ title: '' });
      }
 
   render() {

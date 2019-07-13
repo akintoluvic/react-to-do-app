@@ -30,7 +30,7 @@ class AddTodo extends Component {
 
 // PropTypes
 AddTodo.propTypes = {
-    todo: PropTypes.object.isRequired
+    title: PropTypes.string.isRequired
 }
  
 export default AddTodo;
