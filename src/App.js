@@ -49,11 +49,19 @@ class App extends Component {
     });
   }
 
-  // Delete Todo
+  // Edit Todo
   editTodo = (id) => {
-    console.log('Now edit');
-    
-    this.deleteTodo(id);
+    console.log(id);
+    let todoTitle;
+    this.state.todos.find(todo => {
+        if(todo.id === id) {
+          todoTitle = todo.title;
+        }
+        return todoTitle;
+    });
+    console.log(todoTitle);
+    this.setState({ title: todoTitle, todos: [...this.state.todos] });
+    // this.deleteTodo(id);
   }
 
   // Add Todo
@@ -66,7 +74,7 @@ class App extends Component {
     this.setState({ todos: [...this.state.todos, newTodo] });
   }
 
-  onChange = (e) => this.setState({ title: e.target.value })
+  onChange = (e) => this.setState({ title: e.target.value });
      
      onSubmit = (e) => {
         e.preventDefault();
