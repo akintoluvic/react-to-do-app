@@ -60,7 +60,7 @@ class App extends Component {
         return todoTitle;
     });
     console.log(todoTitle);
-    this.setState({ title: todoTitle, todos: [...this.state.todos] });
+    this.setState({ title: todoTitle });
     // this.deleteTodo(id);
   }
 
